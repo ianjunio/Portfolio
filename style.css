@@ -1,0 +1,147 @@
+/* General Page Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: white;
+    background: linear-gradient(to right, #1c1c1c, #3a3a3a);
+}
+
+/* Header Styling */
+header {
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #ff9800;
+}
+
+p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Navigation Links */
+a {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    background: #222;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Effect */
+a:hover {
+    background: #ff9800;
+    color: #121212;
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(255, 152, 0, 0.3);
+}
+
+/* Profile Page Styling */
+.profile-container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.profile-container img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+}
+
+.profile-container h2 {
+    margin-top: 15px;
+    font-size: 2rem;
+    color: #ff9800;
+}
+
+.profile-container p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    max-width: 400px;
+    margin: 10px auto;
+}
+
+/* Back Button */
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ff9800;
+    color: black;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.back-button:hover {
+    background: white;
+    color: black;
+}
+
+/* 🔹 Responsive Design for Mobile 🔹 */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack navigation links */
+        gap: 10px;
+        padding: 10px;
+    }
+
+    a {
+        font-size: 16px;
+        padding: 10px 20px;
+        width: 80%; /* Make links bigger for mobile */
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .profile-container img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .profile-container p {
+        font-size: 1rem;
+    }
+
+    .back-button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}
