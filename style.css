@@ -13,17 +13,20 @@ header {
     padding: 50px 20px;
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(5px);
+    animation: fadeIn 1s ease-in-out;
 }
 
 h1 {
     font-size: 2.5rem;
     margin: 0;
     color: #ff9800;
+    animation: slideDown 1s ease-in-out;
 }
 
 p {
     font-size: 1.2rem;
     opacity: 0.8;
+    animation: fadeIn 1.2s ease-in-out;
 }
 
 /* Navigation Bar */
@@ -47,7 +50,20 @@ a {
     border-radius: 8px;
     transition: 0.3s ease-in-out;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease-in-out forwards;
 }
+
+/* Staggered animation delay */
+a:nth-child(1) { animation-delay: 0.3s; }
+a:nth-child(2) { animation-delay: 0.4s; }
+a:nth-child(3) { animation-delay: 0.5s; }
+a:nth-child(4) { animation-delay: 0.6s; }
+a:nth-child(5) { animation-delay: 0.7s; }
+a:nth-child(6) { animation-delay: 0.8s; }
+a:nth-child(7) { animation-delay: 0.9s; }
+a:nth-child(8) { animation-delay: 1s; }
 
 /* Hover Effect */
 a:hover {
@@ -64,6 +80,9 @@ a:hover {
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeInZoom 1s ease-in-out forwards;
 }
 
 .profile-container img {
@@ -72,12 +91,18 @@ a:hover {
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid white;
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-container img:hover {
+    transform: scale(1.1) rotate(5deg);
 }
 
 .profile-container h2 {
     margin-top: 15px;
     font-size: 2rem;
     color: #ff9800;
+    animation: slideUp 1s ease-in-out;
 }
 
 .profile-container p {
@@ -85,6 +110,7 @@ a:hover {
     opacity: 0.8;
     max-width: 400px;
     margin: 10px auto;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 /* Back Button */
@@ -97,6 +123,7 @@ a:hover {
     border-radius: 8px;
     text-decoration: none;
     transition: 0.3s;
+    animation: fadeUp 1s ease-in-out;
 }
 
 .back-button:hover {
@@ -104,10 +131,36 @@ a:hover {
     color: black;
 }
 
+/* 🔹 Keyframe Animations 🔹 */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInZoom {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* 🔹 Responsive Design for Mobile 🔹 */
 @media (max-width: 768px) {
     nav {
-        flex-direction: column; /* Stack navigation links */
+        flex-direction: column;
         gap: 10px;
         padding: 10px;
     }
@@ -115,7 +168,7 @@ a:hover {
     a {
         font-size: 16px;
         padding: 10px 20px;
-        width: 80%; /* Make links bigger for mobile */
+        width: 80%;
         text-align: center;
     }
 
@@ -144,4 +197,22 @@ a:hover {
         font-size: 1rem;
         padding: 8px 16px;
     }
+}
+/* Back Button */
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ff9800;
+    color: black;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+    opacity: 1;  /* Ensure it's always visible */
+    animation: fadeUp 1s ease-in-out forwards; /* Ensures animation completes */
+}
+
+.back-button:hover {
+    background: white;
+    color: black;
 }
