@@ -216,3 +216,46 @@ a:hover {
     background: white;
     color: black;
 }
+/* Fade Up Animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply Animation */
+.profile-container img, 
+.profile-container h2, 
+.profile-container p, 
+.back-button {
+    opacity: 0; /* Initially hidden */
+    animation: fadeUp 1s ease-in-out forwards;
+}
+
+/* Add delay for smooth effect */
+.profile-container h2 {
+    animation-delay: 0.3s;
+}
+.profile-container p {
+    animation-delay: 0.5s;
+}
+.back-button {
+    animation-delay: 0.7s;
+}
+.profile-container img, 
+.profile-container h2, 
+.profile-container p, 
+.back-button {
+    will-change: opacity, transform;
+}
+.profile-container img, 
+.profile-container h2, 
+.profile-container p, 
+.back-button {
+    transform: translateZ(0);
+}
